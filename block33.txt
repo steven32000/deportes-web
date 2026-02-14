@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SportsPro - Deportes</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background:#0f2027;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* Navbar */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 50px;
+    background:rgba(0,0,0,0.6);
+    position:fixed;
+    width:100%;
+    z-index:1000;
+}
+
+nav h2{
+    color:#00c6ff;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:20px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#00c6ff;
+}
+
+/* Hero Section */
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:linear-gradient(to right,#0f2027,#203a43,#2c5364);
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero h1{
+    font-size:50px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:18px;
+    max-width:600px;
+}
+
+/* Cards */
+.section{
+    padding:100px 50px;
+    text-align:center;
+}
+
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.card{
+    background:white;
+    color:black;
+    padding:30px;
+    border-radius:15px;
+    width:280px;
+    transition:0.4s;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+.card:hover{
+    transform:translateY(-10px) scale(1.05);
+}
+
+/* Form */
+.contact{
+    background:#203a43;
+    padding:80px 20px;
+    text-align:center;
+}
+
+form{
+    max-width:500px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+input, textarea{
+    padding:12px;
+    border:none;
+    border-radius:8px;
+}
+
+button{
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    background:#00c6ff;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#0072ff;
+}
+
+/* Footer */
+footer{
+    text-align:center;
+    padding:20px;
+    background:black;
+}
+
+/* Animations */
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <h2>SportsPro</h2>
+    <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#deportes">Deportes</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+    </ul>
+</nav>
+
+<section class="hero" id="inicio">
+    <h1>El Mundo del Deporte</h1>
+    <p>Descubre noticias, historia y pasión por los deportes más populares del planeta.</p>
+</section>
+
+<section class="section" id="deportes">
+    <h2 style="margin-bottom:40px;">Deportes Populares</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>⚽ Fútbol</h3>
+            <p>El deporte más popular del mundo con millones de aficionados.</p>
+        </div>
+        <div class="card">
+            <h3>🏀 Baloncesto</h3>
+            <p>Velocidad, técnica y espectáculo en cada partido.</p>
+        </div>
+        <div class="card">
+            <h3>🎾 Tenis</h3>
+            <p>Precisión y resistencia en cada set.</p>
+        </div>
+    </div>
+</section>
+
+<section class="contact" id="contacto">
+    <h2 style="margin-bottom:30px;">Contáctanos</h2>
+    <form onsubmit="return enviarFormulario()">
+        <input type="text" id="nombre" placeholder="Tu nombre" required>
+        <input type="email" id="correo" placeholder="Tu correo electrónico" required>
+        <textarea rows="4" id="mensaje" placeholder="Escribe tu mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+    </form>
+</section>
+
+<footer>
+    <p>© 2026 SportsPro | Página creada por Steven</p>
+</footer>
+
+<script>
+function enviarFormulario(){
+    let nombre = document.getElementById("nombre").value;
+    alert("Gracias " + nombre + ", tu mensaje fue enviado correctamente.");
+    return false; // evita que se recargue la página
+}
+</script>
+
+</body>
+</html>
